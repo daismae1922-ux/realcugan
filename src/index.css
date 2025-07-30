@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .image-comparison {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .image-comparison img {
+    transition: all 0.3s ease;
+  }
+  
+  .processing-animation {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .upload-zone {
+    transition: all 0.3s ease;
+    border: 2px dashed #cbd5e1;
+  }
+  
+  .upload-zone:hover {
+    border-color: #667eea;
+    background-color: rgba(102, 126, 234, 0.05);
+  }
+  
+  .upload-zone.dragover {
+    border-color: #667eea;
+    background-color: rgba(102, 126, 234, 0.1);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
